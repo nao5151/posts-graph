@@ -1,0 +1,29 @@
+.focus-posts {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 150px;
+  overflow: auto;
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+
+  &__label {
+    text-align: center;
+  }
+
+  &__item {
+    padding: .5em;
+    & + & {
+      border-top: 1px solid rgba(0,0,0,.1);
+    }
+  }
+
+  &__title,
+  &__date {
+    margin: 0;
+  }
+}

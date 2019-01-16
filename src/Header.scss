@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5em 0;
+  &__title {
+    margin: 0 1em;
+  }
+  &__button {
+    &--disabled {
+      pointer-events: none;
+      opacity: .2;
+    }
+  }
+}

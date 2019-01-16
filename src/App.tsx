@@ -1,47 +1,99 @@
 import React, { Component } from 'react';
-import './App.scss';
+import Parser, { Items } from 'rss-parser'
+import Header from './Header'
+import Graph from './Graph'
+import FocusPosts from './FocusPosts'
+import getDate from './utils/getDate'
+import './App.scss'
 
-class App extends Component {
+export interface Posts {
+  [key: string]: Items[]
+}
+
+interface AppState {
+  vertical: boolean,
+  year: number,
+  minYear: number,
+  maxYear: number,
+  posts: Posts | null,
+  focus: string
+}
+
+const today = new Date()
+const locale = 'ja-JP'
+const dateStringOptions = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}
+
+class App extends Component<{}, AppState> {
   state = {
     vertical: false,
-    months: [
-      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-    ],
-    weeks: [1, 2, 3, 4, 5]
+    year: today.getFullYear(),
+    minYear: today.getFullYear(),
+    maxYear: today.getFullYear(),
+    posts: null,
+    focus: '',
+  }
+
+  componentDidMount() {
+    (async () => {
+      const parser = new Parser()
+      const feed = await parser.parseURL('/rss.xml')
+      if (feed.items) {
+        const years: number[] = []
+        const posts = feed.items.reduceRight((acm, item) => {
+          const { year, month, week } = getDate(item.pubDate as string)
+          years.push(year)
+
+          item.year = year
+          item.month = month
+          item.week = week
+          item.pubDate = new Date(item.pubDate as string).toLocaleDateString(locale, dateStringOptions)
+          
+          const key = `${year}-${month}-${week}`
+          if (!acm[key]) {
+            acm[key] = []
+          }
+          acm[key].push(item)
+
+          return acm
+        }, {})
+
+        this.setState({
+          minYear: Math.min(...years),
+          posts,
+        })
+      }
+    })()
   }
 
   render() {
-    const { vertical, months, weeks } = this.state
+    const { vertical, year, minYear, maxYear, posts, focus } = this.state
+
     return (
-      <>
+      <div className="app">
         <button onClick={() => this.setState({vertical: !vertical})}>change view</button>
-        <div
-          className={`graph ${vertical ? 'graph--vertical' : ''}`}
-        >
-          <div className="graph__months">
-            {months.map(m => (
-              <div className="graph__month">{m}</div>
-            ))}
-          </div>
-          <div className="graph__weeks">
-            {weeks.map(w => (
-              <div className="graph__week">{w}</div>
-            ))}
-          </div>
-          <div className="graph__posts">
-            {Array.from({length: 12}).map((_, i) => (
-              <>
-              {weeks.map((w, i) => (
-                <div className={`graph__post graph__post--${i}`}>
-                  <span className="graph__post-label">1月{w}週目 {i}記事</span>
-                </div>
-              ))}
-              </>
-            ))}
-          </div>
-        </div>
-      </>
-    );
+        <Header
+          year={year}
+          maxYear={maxYear}
+          minYear={minYear}
+          prevClick={() => this.setState({year: year - 1})}
+          nextClick={() => this.setState({year: year + 1})}
+        />
+        <Graph
+          vertical={vertical}
+          year={year}
+          posts={posts}
+          onFocus={(key) => this.setState({focus: key})}
+        />
+        <FocusPosts
+          posts={focus && posts ? posts[focus] : []}
+        />
+      </div>
+    )
   }
 }
 
