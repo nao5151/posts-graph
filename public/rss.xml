@@ -2,235 +2,235 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Miobiki</title>
-    <link>http://localhost:1313/</link>
+    <link>https://miobiki.com/</link>
     <description>Recent content on Miobiki</description>
     <generator>Hugo -- gohugo.io</generator>
     
-        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://miobiki.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lambda functions on Netlifyを使ってCORS制限を回避する</title>
-      <link>http://localhost:1313/lambda-functions-on-netlify/</link>
+      <link>https://miobiki.com/lambda-functions-on-netlify/</link>
       <pubDate>Fri, 11 Jan 2019 21:00:00 +0900</pubDate>
       
-      <guid>http://localhost:1313/lambda-functions-on-netlify/</guid>
+      <guid>https://miobiki.com/lambda-functions-on-netlify/</guid>
       <description>react, redux, typescriptの勉強がてらPWAのpodcastアプリを開発してます。 バックエンド側の開発をせずにいたい思いがあって、自前のAPI</description>
     </item>
     
     <item>
       <title>HTMLAudioElement.src = 相対パスは絶対パスに変わる</title>
-      <link>http://localhost:1313/htmlaudioelement-src/</link>
+      <link>https://miobiki.com/htmlaudioelement-src/</link>
       <pubDate>Sun, 06 Jan 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://localhost:1313/htmlaudioelement-src/</guid>
+      <guid>https://miobiki.com/htmlaudioelement-src/</guid>
       <description>const audioFile = &amp;#39;./path/to/audio.mp3&amp;#39; const audio = new Audio(audioFile) console.log(audio.src === audioFile) // false console.log(audio.src) // http://localhost:3000/path/to/audio.mp3 現在再生中のファイル判定はidとかにしないといけない。 それにしてもReact,Reduxでaudioやca</description>
     </item>
     
     <item>
       <title>ウィンドウ固定要素をflex・gridレイアウトで表現する</title>
-      <link>http://localhost:1313/flex-grid-fixed-layout/</link>
+      <link>https://miobiki.com/flex-grid-fixed-layout/</link>
       <pubDate>Fri, 28 Dec 2018 15:00:00 +0900</pubDate>
       
-      <guid>http://localhost:1313/flex-grid-fixed-layout/</guid>
+      <guid>https://miobiki.com/flex-grid-fixed-layout/</guid>
       <description>固定ヘッダーなどウィンドウ固定要素のスタイルには、position: fixedを使うことが多いと思います。 ですが、ページ内リンクでジャンプし</description>
     </item>
     
     <item>
       <title>cssのみでグラデーションテキストを実装する</title>
-      <link>http://localhost:1313/gradation-text/</link>
+      <link>https://miobiki.com/gradation-text/</link>
       <pubDate>Fri, 21 Dec 2018 20:00:00 +0900</pubDate>
       
-      <guid>http://localhost:1313/gradation-text/</guid>
+      <guid>https://miobiki.com/gradation-text/</guid>
       <description>cssのみで対応できますがブラウザによっては対応してないため、諦めるか、無難な表示になるようにフォールバックしておきます。例えばIE11は未</description>
     </item>
     
     <item>
       <title>マニュアル用のスクリーンショット準備を自動化させる</title>
-      <link>http://localhost:1313/puppeteer-auto-screenshot/</link>
+      <link>https://miobiki.com/puppeteer-auto-screenshot/</link>
       <pubDate>Thu, 13 Dec 2018 21:00:00 +0900</pubDate>
       
-      <guid>http://localhost:1313/puppeteer-auto-screenshot/</guid>
+      <guid>https://miobiki.com/puppeteer-auto-screenshot/</guid>
       <description>操作マニュアルを作成したりするのって大変ですよね。 分かりやすいようにスクリーンショットを撮ったり、動画も撮ってみたりしてみましたがどうも面倒</description>
     </item>
     
     <item>
       <title>いまさらながらCSSフレームワーク（Bootstrap）便利だなと思っている</title>
-      <link>http://localhost:1313/bootstrap/</link>
+      <link>https://miobiki.com/bootstrap/</link>
       <pubDate>Thu, 06 Dec 2018 19:00:00 +0900</pubDate>
       
-      <guid>http://localhost:1313/bootstrap/</guid>
+      <guid>https://miobiki.com/bootstrap/</guid>
       <description>CSSフレームワークを使って楽できる部分は楽したいです。 フレームワーク利用前 何度も同じスタイル書きたくない ベースとなるscssのテンプレート</description>
     </item>
     
     <item>
       <title>chromeでelement.scrollIntoView({ behavior: &#39;smooth&#39; })が行き過ぎてしまう</title>
-      <link>http://localhost:1313/scrollintoview/</link>
+      <link>https://miobiki.com/scrollintoview/</link>
       <pubDate>Wed, 10 Oct 2018 19:01:28 +0900</pubDate>
       
-      <guid>http://localhost:1313/scrollintoview/</guid>
+      <guid>https://miobiki.com/scrollintoview/</guid>
       <description>https://developer.mozilla.org/ja/docs/Web/API/Element/scrollIntoView#パ</description>
     </item>
     
     <item>
       <title>GatsbyJS月別archiveページ作成</title>
-      <link>http://localhost:1313/gatsbyjs-archive-page/</link>
+      <link>https://miobiki.com/gatsbyjs-archive-page/</link>
       <pubDate>Wed, 26 Sep 2018 10:19:33 +0900</pubDate>
       
-      <guid>http://localhost:1313/gatsbyjs-archive-page/</guid>
+      <guid>https://miobiki.com/gatsbyjs-archive-page/</guid>
       <description>このブログとは別件で個人ブログをwordpress v4.9.8とGatsbyJS v2で作成してます。 headless cmsというやつです。 gatsby.j</description>
     </item>
     
     <item>
       <title>やっとこさCIデビュー</title>
-      <link>http://localhost:1313/ci-debut/</link>
+      <link>https://miobiki.com/ci-debut/</link>
       <pubDate>Sun, 26 Aug 2018 21:18:10 +0900</pubDate>
       
-      <guid>http://localhost:1313/ci-debut/</guid>
+      <guid>https://miobiki.com/ci-debut/</guid>
       <description>何回目の挑戦か分かりませんが、やっとCircleCIでフロントエンドのビルドからデプロイまでできる設定を作れました。 いつもゴールに近いところ</description>
     </item>
     
     <item>
       <title>iPhone 7 PlusからHuawei P20 liteに乗り換えた</title>
-      <link>http://localhost:1313/huawei-p20-lite/</link>
+      <link>https://miobiki.com/huawei-p20-lite/</link>
       <pubDate>Tue, 07 Aug 2018 16:52:34 +0900</pubDate>
       
-      <guid>http://localhost:1313/huawei-p20-lite/</guid>
+      <guid>https://miobiki.com/huawei-p20-lite/</guid>
       <description>Androidの検証用端末が欲しいなーと思い価格コムで探していると、Huawei P20 lite SIMフリーを見つけました。 検証用端末だから1万以内で探</description>
     </item>
     
     <item>
       <title>OGP画像ジェネレーターを作った</title>
-      <link>http://localhost:1313/ogp-generator/</link>
+      <link>https://miobiki.com/ogp-generator/</link>
       <pubDate>Sat, 28 Jul 2018 11:28:24 +0900</pubDate>
       
-      <guid>http://localhost:1313/ogp-generator/</guid>
+      <guid>https://miobiki.com/ogp-generator/</guid>
       <description>最初の方はOGP画像作成も少し頑張っていたのですが、すぐに面倒になったのでデフォルト画像で埋め尽くされるようになってしまいました。 なにより手</description>
     </item>
     
     <item>
       <title>Privacy Policy</title>
-      <link>http://localhost:1313/privacy/</link>
+      <link>https://miobiki.com/privacy/</link>
       <pubDate>Mon, 09 Jul 2018 20:56:45 +0900</pubDate>
       
-      <guid>http://localhost:1313/privacy/</guid>
+      <guid>https://miobiki.com/privacy/</guid>
       <description>個人情報の利用目的 当サイトでは、お問い合わせなどの際にメールアドレス等の個人情報をご登録いただく場合がございます。 これらの個人情報は質問に対</description>
     </item>
     
     <item>
       <title>Nuxt.jsで静的サイト開発時のSNSボタンの実装</title>
-      <link>http://localhost:1313/nuxt-sns-component/</link>
+      <link>https://miobiki.com/nuxt-sns-component/</link>
       <pubDate>Sat, 30 Jun 2018 12:49:10 +0900</pubDate>
       
-      <guid>http://localhost:1313/nuxt-sns-component/</guid>
+      <guid>https://miobiki.com/nuxt-sns-component/</guid>
       <description>Nuxt.jsを使って静的サイトを初めて開発しましたが、かなり良かったです。 そのときにTweetボタン、facebookのいいねボタンをまと</description>
     </item>
     
     <item>
       <title>ABOUT</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://miobiki.com/about/</link>
       <pubDate>Sun, 17 Jun 2018 09:51:52 +0900</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://miobiki.com/about/</guid>
       <description>Miobikiとは 澪引き／水脈引き 水先案内をすること。 水先案内 船が港・内海・運河などの危険水域を通るときに水路の案内をすること。 Weblio</description>
     </item>
     
     <item>
       <title>fetchのコールバックの書き方</title>
-      <link>http://localhost:1313/js-fetch-callback/</link>
+      <link>https://miobiki.com/js-fetch-callback/</link>
       <pubDate>Sun, 17 Jun 2018 09:51:52 +0900</pubDate>
       
-      <guid>http://localhost:1313/js-fetch-callback/</guid>
+      <guid>https://miobiki.com/js-fetch-callback/</guid>
       <description>fetchのコールバックの書き方は特に何も考えずに毎回thenで繋げて書いていました。 そんなときに、headerの値をjsonに追加して返す</description>
     </item>
     
     <item>
       <title>仕事はほどほどに</title>
-      <link>http://localhost:1313/2018-06-13/</link>
+      <link>https://miobiki.com/2018-06-13/</link>
       <pubDate>Wed, 13 Jun 2018 17:39:48 +0900</pubDate>
       
-      <guid>http://localhost:1313/2018-06-13/</guid>
+      <guid>https://miobiki.com/2018-06-13/</guid>
       <description>仕事で疲れると、プライベートプロジェクトの開発時間がなくなり、そのうちモチベーションもなくなって作り終えずに終わる。 雑記をマークダウンで書く</description>
     </item>
     
     <item>
       <title>LINE@アカウント/dev/null作成</title>
-      <link>http://localhost:1313/line-dev-null/</link>
+      <link>https://miobiki.com/line-dev-null/</link>
       <pubDate>Fri, 27 Apr 2018 18:30:10 +0900</pubDate>
       
-      <guid>http://localhost:1313/line-dev-null/</guid>
+      <guid>https://miobiki.com/line-dev-null/</guid>
       <description>ラインのシェアボタンなどの表示を確認したい時は、適当なボットに送っていました。 なので、それ用のアカウントとして /dev/null を作ってみました。 面倒だった</description>
     </item>
     
     <item>
       <title>外部スタイルシートと外部スクリプトの相対パスの疑問</title>
-      <link>http://localhost:1313/relative-path/</link>
+      <link>https://miobiki.com/relative-path/</link>
       <pubDate>Mon, 23 Apr 2018 08:33:39 +0900</pubDate>
       
-      <guid>http://localhost:1313/relative-path/</guid>
+      <guid>https://miobiki.com/relative-path/</guid>
       <description>「外部スタイルシートのurl関数」と「外部スクリプトのfetch API」 それぞれ相対パスで記述した時の起点が異なることに疑問を覚えました。 ど</description>
     </item>
     
     <item>
       <title>iPadでプログラミング</title>
-      <link>http://localhost:1313/ipad-programming/</link>
+      <link>https://miobiki.com/ipad-programming/</link>
       <pubDate>Tue, 17 Apr 2018 18:17:02 +0900</pubDate>
       
-      <guid>http://localhost:1313/ipad-programming/</guid>
+      <guid>https://miobiki.com/ipad-programming/</guid>
       <description>9.7インチiPad 128GB wi-fiモデルを購入しました。個人的には購入して大正解でした。 期待していたのはApple Pencilが使えることでし</description>
     </item>
     
     <item>
       <title>CSS 3Dに触れる</title>
-      <link>http://localhost:1313/css-3d-transforms/</link>
+      <link>https://miobiki.com/css-3d-transforms/</link>
       <pubDate>Fri, 23 Mar 2018 19:29:10 +0900</pubDate>
       
-      <guid>http://localhost:1313/css-3d-transforms/</guid>
+      <guid>https://miobiki.com/css-3d-transforms/</guid>
       <description>以前、表現の幅を広げようとWebGLを使った3Dの勉強をしたことがありましたが、高尚すぎて挫折した経験があります。 そんな中、CSSで3D表現</description>
     </item>
     
     <item>
       <title>browser-syncでmiddlewareを設定してAPIモックサーバーとしても機能させる</title>
-      <link>http://localhost:1313/browser-sync-api-sample/</link>
+      <link>https://miobiki.com/browser-sync-api-sample/</link>
       <pubDate>Thu, 15 Mar 2018 17:06:43 +0900</pubDate>
       
-      <guid>http://localhost:1313/browser-sync-api-sample/</guid>
+      <guid>https://miobiki.com/browser-sync-api-sample/</guid>
       <description>マークアップ時に、JSONを返してくれるモックサーバーがあると便利な時があります。 json-serverなどもありますが、browser-s</description>
     </item>
     
     <item>
       <title>webpack3.7.1 =&gt; 4.0.1移行ログ</title>
-      <link>http://localhost:1313/webpack-versionup-log/</link>
+      <link>https://miobiki.com/webpack-versionup-log/</link>
       <pubDate>Fri, 02 Mar 2018 18:21:15 +0900</pubDate>
       
-      <guid>http://localhost:1313/webpack-versionup-log/</guid>
+      <guid>https://miobiki.com/webpack-versionup-log/</guid>
       <description>2018年2月25日にwebpack4がリリースされたので、普段使っている3.7.1版のテンプレートを4.0.1に移行してみた時のログです。</description>
     </item>
     
     <item>
       <title>今更ながらjQueryのイベントのネームスペースって便利なので、どこに保存されてるのか調べてみた話</title>
-      <link>http://localhost:1313/jquery-event-namespace/</link>
+      <link>https://miobiki.com/jquery-event-namespace/</link>
       <pubDate>Mon, 19 Feb 2018 17:37:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/jquery-event-namespace/</guid>
+      <guid>https://miobiki.com/jquery-event-namespace/</guid>
       <description>イベントのネームスペース jQueryは言わずもがなですね。 なんとなく使ってましたが、ふとイベント追加時のnamespaceってかなり便利な拡</description>
     </item>
     
     <item>
       <title>remodalをカスタマイズして使っていた時にはまった話</title>
-      <link>http://localhost:1313/remodal-custom-issue/</link>
+      <link>https://miobiki.com/remodal-custom-issue/</link>
       <pubDate>Sun, 18 Feb 2018 19:46:19 +0900</pubDate>
       
-      <guid>http://localhost:1313/remodal-custom-issue/</guid>
+      <guid>https://miobiki.com/remodal-custom-issue/</guid>
       <description>remodalとは remodal github モーダルを簡単に実装できるjQueryプラグインで、デフォルトのスタイルも好きでそのままでも結構使えます。 jQuery</description>
     </item>
     
     <item>
       <title>Hugoで個人ブログを作りはじめました</title>
-      <link>http://localhost:1313/creating-myblog/</link>
+      <link>https://miobiki.com/creating-myblog/</link>
       <pubDate>Sat, 10 Feb 2018 22:41:54 +0900</pubDate>
       
-      <guid>http://localhost:1313/creating-myblog/</guid>
+      <guid>https://miobiki.com/creating-myblog/</guid>
       <description>はじめに まだ未完成ですが、Hugoで個人ブログを作りはじめました。 はてな＋qiita＋noteを参考にテーマを作っています。 他のテーマや公式</description>
     </item>
     
