@@ -20,7 +20,28 @@
     background: #dadada;
   }
 
-  &--0 {
+  &[data-week="0"] {
+    grid-row-start: 1;
+  }
+
+  &[data-week="1"] {
+    grid-row-start: 2;
+  }
+
+  &[data-week="2"] {
+    grid-row-start: 3;
+  }
+
+  &[data-week="3"] {
+    grid-row-start: 4;
+  }
+
+  &[data-week="4"] {
+    grid-row-start: 5;
+  }
+
+  &--0,
+  &--none {
     &:focus {
       animation: none;
       outline: none;
@@ -28,7 +49,7 @@
   }
 
   &--none {
-    visibility: hidden;
+    opacity: .3;
   }
 
   &__label {
@@ -43,20 +64,26 @@
   
     $base: #006994;
     $animation: show .25s ease-out forwards;
-    .graph-block--1 & {
+    .graph-block--1 &,
+    .graph-block--2 &,
+    .graph-block--3 &,
+    .graph-block--4 & {
       animation: $animation;
+      cursor: pointer;
+    }
+    .graph-block--1 & {
+      background: desaturate($base, 0%);
+    }
+    .graph-block--1 & {
       background: desaturate($base, 0%);
     }
     .graph-block--2 & {
-      animation: $animation;
       background: desaturate($base, 25%);
     }
     .graph-block--3 & {
-      animation: $animation;
       background: desaturate($base, 50%);
     }
     .graph-block--4 & {
-      animation: $animation;
       background: desaturate($base, 75%);
     }
   }
