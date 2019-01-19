@@ -10,15 +10,6 @@ export interface Posts {
   [key: string]: Items[]
 }
 
-interface AppState {
-  vertical: boolean,
-  year: number,
-  minYear: number,
-  maxYear: number,
-  posts: Posts | null,
-  focus: string
-}
-
 const today = new Date()
 const locale = 'ja-JP'
 const dateStringOptions = {
@@ -26,6 +17,15 @@ const dateStringOptions = {
   year: 'numeric',
   month: 'long',
   day: 'numeric'
+}
+
+interface AppState {
+  vertical: boolean,
+  year: number,
+  minYear: number,
+  maxYear: number,
+  posts: Posts | null,
+  focus: string
 }
 
 class App extends Component<{}, AppState> {
@@ -80,8 +80,8 @@ class App extends Component<{}, AppState> {
           year={year}
           maxYear={maxYear}
           minYear={minYear}
-          prevClick={() => this.setState({year: year - 1})}
-          nextClick={() => this.setState({year: year + 1})}
+          prevClick={() => this.setState({year: year - 1, focus: ''})}
+          nextClick={() => this.setState({year: year + 1, focus: ''})}
         />
         <Graph
           vertical={vertical}
