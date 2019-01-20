@@ -15,8 +15,7 @@
     "clean:lib": "rm -rf lib",
     "prepublishOnly": "npm run build:lib",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
-    "postinstall": "npm run build:lib"
+    "deploy": "gh-pages -d build"
   },
   "peerDependencies": {
     "react": "^16.7.0"
