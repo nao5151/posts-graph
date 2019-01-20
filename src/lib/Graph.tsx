@@ -1,8 +1,7 @@
 import React from 'react'
-import { Posts } from './App'
+import { Posts } from './PostsGraph'
 import GraphBlock from './GraphBlock'
 import getWeeksInMonth from './utils/getWeeksInMonth'
-import './Graph.scss'
 
 const months = [
   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'

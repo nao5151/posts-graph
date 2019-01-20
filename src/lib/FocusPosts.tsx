@@ -1,5 +1,4 @@
 import React from 'react'
-import './FocusPosts.scss'
 import { Items } from 'rss-parser'
 
 interface FocusPostsProps {

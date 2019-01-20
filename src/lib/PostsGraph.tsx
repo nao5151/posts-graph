@@ -4,7 +4,6 @@ import Header from './Header'
 import Graph from './Graph'
 import FocusPosts from './FocusPosts'
 import getDate from './utils/getDate'
-import './App.scss'
 
 export interface Posts {
   [key: string]: Items[]
@@ -28,7 +27,7 @@ interface AppState {
   focus: string
 }
 
-class App extends Component<{}, AppState> {
+export default class PostsGraph extends Component<{}, AppState> {
   state = {
     vertical: false,
     year: today.getFullYear(),
@@ -96,5 +95,3 @@ class App extends Component<{}, AppState> {
     )
   }
 }
-
-export default App;
