@@ -18,7 +18,11 @@ const dateStringOptions = {
   day: 'numeric'
 }
 
-interface AppState {
+interface PostsGraphProps {
+  rss: string
+}
+
+interface PostsGraphState {
   vertical: boolean,
   year: number,
   minYear: number,
@@ -27,7 +31,7 @@ interface AppState {
   focus: string
 }
 
-export default class PostsGraph extends Component<{}, AppState> {
+export default class PostsGraph extends Component<PostsGraphProps, PostsGraphState> {
   state = {
     vertical: false,
     year: today.getFullYear(),
@@ -40,7 +44,7 @@ export default class PostsGraph extends Component<{}, AppState> {
   componentDidMount() {
     (async () => {
       const parser = new Parser()
-      const feed = await parser.parseURL('/rss.xml')
+      const feed = await parser.parseURL(this.props.rss)
       if (feed.items) {
         const years: number[] = []
         const posts = feed.items.reduceRight((acm, item) => {

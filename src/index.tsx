@@ -4,7 +4,7 @@ import PostsGraph from './lib/PostsGraph';
 import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
-ReactDOM.render(<PostsGraph />, document.getElementById('root'));
+ReactDOM.render(<PostsGraph rss="./rss.xml" />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
