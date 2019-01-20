@@ -1,9 +1,9 @@
 {
   "name": "@nao5151/posts-graph",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "homepage": ".",
+  "homepage": "https://naoyukimiyazaki.github.io/posts-graph/",
   "license": "MIT",
   "scripts": {
     "start": "react-scripts start",

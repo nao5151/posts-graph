@@ -1,3 +1,3 @@
 # posts-graph
 
-![screenshot](screenshot.png)
+![screenshot](https://github.com/NaoyukiMiyazaki/posts-graph/raw/master/screenshot.png)
