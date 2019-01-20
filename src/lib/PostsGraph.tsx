@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Parser, { Items } from 'rss-parser'
 import Header from './Header'
 import Graph from './Graph'
-import FocusPosts from './FocusPosts'
 import getDate from './utils/getDate'
 
-export interface Posts {
-  [key: string]: Items[]
+export type Posts = Items[]
+
+export interface PostsObject {
+  [key: string]: Posts
 }
 
 const today = new Date()
@@ -20,25 +21,26 @@ const dateStringOptions = {
 
 interface PostsGraphProps {
   rss: string
+  header?: boolean
+  vertical?: boolean
+  changeFocus?: (focusPosts: Posts) => void
 }
 
 interface PostsGraphState {
-  vertical: boolean,
   year: number,
   minYear: number,
   maxYear: number,
-  posts: Posts | null,
-  focus: string
+  posts: PostsObject,
+  focusKey: string
 }
 
 export default class PostsGraph extends Component<PostsGraphProps, PostsGraphState> {
   state = {
-    vertical: false,
     year: today.getFullYear(),
     minYear: today.getFullYear(),
     maxYear: today.getFullYear(),
-    posts: null,
-    focus: '',
+    posts: {},
+    focusKey: '',
   }
 
   componentDidMount() {
@@ -73,27 +75,38 @@ export default class PostsGraph extends Component<PostsGraphProps, PostsGraphSta
     })()
   }
 
+  componentDidUpdate(prevProps: PostsGraphProps, prevState: PostsGraphState) {
+    const { changeFocus } = this.props
+    const { focusKey, posts } = this.state
+    if (focusKey === prevState.focusKey) return
+
+    const focusPosts: Items[] = (posts as PostsObject)[focusKey] ?
+      (posts as PostsObject)[focusKey] : []
+    if (typeof changeFocus === 'function') {
+      changeFocus(focusPosts)
+    }
+  }
+
   render() {
-    const { vertical, year, minYear, maxYear, posts, focus } = this.state
+    const { header, vertical } = this.props
+    const { year, minYear, maxYear, posts } = this.state
 
     return (
-      <div className="app">
-        <button onClick={() => this.setState({vertical: !vertical})}>change view</button>
-        <Header
-          year={year}
-          maxYear={maxYear}
-          minYear={minYear}
-          prevClick={() => this.setState({year: year - 1, focus: ''})}
-          nextClick={() => this.setState({year: year + 1, focus: ''})}
-        />
+      <div className="posts-graph">
+        {header && (
+          <Header
+            year={year}
+            maxYear={maxYear}
+            minYear={minYear}
+            prevClick={() => this.setState({year: year - 1, focusKey: ''})}
+            nextClick={() => this.setState({year: year + 1, focusKey: ''})}
+          />
+        )}
         <Graph
           vertical={vertical}
           year={year}
           posts={posts}
-          onFocus={(key) => this.setState({focus: key})}
-        />
-        <FocusPosts
-          posts={focus && posts ? posts[focus] : []}
+          onFocus={(key) => this.setState({focusKey: key})}
         />
       </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Posts } from './PostsGraph'
+import { Posts, PostsObject } from './PostsGraph'
 import GraphBlock from './GraphBlock'
 import getWeeksInMonth from './utils/getWeeksInMonth'
 
@@ -24,15 +24,15 @@ const getCount = (post: any, key: string) => {
 }
 
 interface GraphProps {
-  vertical: boolean,
+  vertical?: boolean,
   year: number,
-  posts: Posts | null,
+  posts: PostsObject,
   onFocus: (key: string) => void
 }
 
 const Graph: React.SFC<GraphProps> = (props) => {
   const { vertical, posts, year, onFocus } = props
-  if (!posts) return null
+  if (Object.keys(posts).length === 0) return null
 
   return (
     <div className={`graph ${vertical ? 'graph--vertical' : ''}`}>
