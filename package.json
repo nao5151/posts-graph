@@ -7,14 +7,16 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:lib": "npm run clean:lib && tsc --build tsconfig.lib.json",
+    "build:lib": "npm run clean:lib && tsc --build tsconfig.lib.json && npm run copy:scss",
+    "copy:scss": "mkdir -p lib/scss && cp src/lib/*.scss lib/scss",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean:docs": "rm -rf docs",
     "clean:lib": "rm -rf lib",
     "prepublishOnly": "npm run build:lib",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "postinstall": "npm run build:lib"
   },
   "peerDependencies": {
     "react": "^16.7.0"
