@@ -1,10 +1,9 @@
 {
   "name": "@nao5151/posts-graph",
   "version": "0.1.0",
-  "private": true,
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "homepage": "https://naoyukimiyazaki.github.io/posts-graph/",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
