@@ -1,4 +1,6 @@
-src
+build
+src/*
+!src/lib/
 public
 .editorconfig
 tsconfig*
