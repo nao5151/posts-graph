@@ -1,5 +1,5 @@
 import React from 'react'
-import { Posts, PostsObject } from './PostsGraph'
+import { PostsObject } from './PostsGraph'
 import GraphBlock from './GraphBlock'
 import getWeeksInMonth from './utils/getWeeksInMonth'
 
