@@ -7,8 +7,8 @@ const dateOption = {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
-  }
+    day: 'numeric',
+  },
 }
 
 export async function fetchFeed(rss: string): Promise<Output> {
@@ -32,7 +32,10 @@ export function itemsToPosts(acm: Posts, item: Items) {
     year,
     month,
     week,
-    pubDate: new Date(item.pubDate as string).toLocaleDateString(dateOption.locale, dateOption.stringOptions)
+    pubDate: new Date(item.pubDate as string).toLocaleDateString(
+      dateOption.locale,
+      dateOption.stringOptions
+    ),
   }
 
   const key = `${year}-${month}-${week}`

@@ -16,7 +16,7 @@ it('getWeeksInMonth 2017', () => {
   expect(getWeeksInMonth(2017, 9)).toBe(5)
   expect(getWeeksInMonth(2017, 10)).toBe(4)
   expect(getWeeksInMonth(2017, 11)).toBe(5)
-});
+})
 
 it('getWeeksInMonth 2018', () => {
   expect(getWeeksInMonth(2018, 0)).toBe(4)
@@ -31,7 +31,7 @@ it('getWeeksInMonth 2018', () => {
   expect(getWeeksInMonth(2018, 9)).toBe(4)
   expect(getWeeksInMonth(2018, 10)).toBe(4)
   expect(getWeeksInMonth(2018, 11)).toBe(5)
-});
+})
 
 it('getWeeksInMonth 2019', () => {
   expect(getWeeksInMonth(2019, 0)).toBe(4)
@@ -46,7 +46,7 @@ it('getWeeksInMonth 2019', () => {
   expect(getWeeksInMonth(2019, 9)).toBe(4)
   expect(getWeeksInMonth(2019, 10)).toBe(4)
   expect(getWeeksInMonth(2019, 11)).toBe(5)
-});
+})
 
 it('getWeeksInMonth 2020', () => {
   expect(getWeeksInMonth(2020, 0)).toBe(4)
@@ -61,4 +61,4 @@ it('getWeeksInMonth 2020', () => {
   expect(getWeeksInMonth(2020, 9)).toBe(4)
   expect(getWeeksInMonth(2020, 10)).toBe(5)
   expect(getWeeksInMonth(2020, 11)).toBe(4)
-});
+})

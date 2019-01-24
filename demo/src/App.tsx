@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import PostsGraph from './lib/PostsGraph';
+import PostsGraph from '../../src/index';
 import { Items } from 'rss-parser';
 import './App.scss'
+
+const rss = require('./rss.xml')
 
 interface AppState {
   posts: Items[]
@@ -18,7 +20,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <PostsGraph
-          rss="./rss.xml"
+          rss={rss}
           vertical={false}
           header={true}
           changeFocus={(focusPosts: Items[]) => this.setState({posts: focusPosts})}
