@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import PostsGraph, { Posts } from './lib/PostsGraph';
+import PostsGraph from './lib/PostsGraph';
 import { Items } from 'rss-parser';
 import './App.scss'
 
 interface AppState {
-  posts: Posts
+  posts: Items[]
 }
 
 export default class App extends Component {
@@ -21,7 +21,7 @@ export default class App extends Component {
           rss="./rss.xml"
           vertical={false}
           header={true}
-          changeFocus={(focusPosts: Posts) => this.setState({posts: focusPosts})}
+          changeFocus={(focusPosts: Items[]) => this.setState({posts: focusPosts})}
         />
         {posts.length > 0 && (
           <ul className="focus-posts">

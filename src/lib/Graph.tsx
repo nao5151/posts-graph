@@ -1,7 +1,7 @@
 import React from 'react'
-import { PostsObject } from './PostsGraph'
 import GraphBlock from './GraphBlock'
 import getWeeksInMonth from './utils/getWeeksInMonth'
+import { Posts } from './utils/fetchAndParseFeed'
 
 const months = [
   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
@@ -26,7 +26,7 @@ const getCount = (post: any, key: string) => {
 interface GraphProps {
   vertical?: boolean,
   year: number,
-  posts: PostsObject,
+  posts: Posts,
   onFocus: (key: string) => void
 }
 

@@ -1,38 +1,25 @@
 import React, { Component } from 'react';
-import Parser, { Items } from 'rss-parser'
+import { Items } from 'rss-parser'
 import Header from './Header'
 import Graph from './Graph'
-import getDate from './utils/getDate'
-
-export type Posts = Items[]
-
-export interface PostsObject {
-  [key: string]: Posts
-}
-
-const today = new Date()
-const locale = 'ja-JP'
-const dateStringOptions = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-}
+import fetchAndParseFeed, { Posts } from './utils/fetchAndParseFeed';
 
 interface PostsGraphProps {
   rss: string
   header?: boolean
   vertical?: boolean
-  changeFocus?: (focusPosts: Posts) => void
+  changeFocus?: (focusPosts: Items[]) => void
 }
 
 interface PostsGraphState {
   year: number,
   minYear: number,
   maxYear: number,
-  posts: PostsObject,
+  posts: Posts,
   focusKey: string
 }
+
+const today = new Date()
 
 export default class PostsGraph extends Component<PostsGraphProps, PostsGraphState> {
   state = {
@@ -45,33 +32,12 @@ export default class PostsGraph extends Component<PostsGraphProps, PostsGraphSta
 
   componentDidMount() {
     (async () => {
-      const parser = new Parser()
-      const feed = await parser.parseURL(this.props.rss)
-      if (feed.items) {
-        const years: number[] = []
-        const posts = feed.items.reduceRight((acm, item) => {
-          const { year, month, week } = getDate(item.pubDate as string)
-          years.push(year)
+      const posts = await fetchAndParseFeed(this.props.rss)
 
-          item.year = year
-          item.month = month
-          item.week = week
-          item.pubDate = new Date(item.pubDate as string).toLocaleDateString(locale, dateStringOptions)
-          
-          const key = `${year}-${month}-${week}`
-          if (!acm[key]) {
-            acm[key] = []
-          }
-          acm[key].push(item)
-
-          return acm
-        }, {})
-
-        this.setState({
-          minYear: Math.min(...years),
-          posts,
-        })
-      }
+      this.setState({
+        minYear: Math.min(...(posts.years as number[])),
+        posts,
+      })
     })()
   }
 
@@ -80,8 +46,8 @@ export default class PostsGraph extends Component<PostsGraphProps, PostsGraphSta
     const { focusKey, posts } = this.state
     if (focusKey === prevState.focusKey) return
 
-    const focusPosts: Items[] = (posts as PostsObject)[focusKey] ?
-      (posts as PostsObject)[focusKey] : []
+    const focusPosts = (posts as Posts)[focusKey] ?
+      (posts as Posts)[focusKey] as Items[] : []
     if (typeof changeFocus === 'function') {
       changeFocus(focusPosts)
     }
