@@ -7,7 +7,6 @@ import fetchAndParseFeed, { Posts } from './utils/fetchAndParseFeed';
 interface PostsGraphProps {
   rss: string
   header?: boolean
-  vertical?: boolean
   changeFocus?: (focusPosts: Items[]) => void
 }
 
@@ -54,7 +53,7 @@ export default class PostsGraph extends Component<PostsGraphProps, PostsGraphSta
   }
 
   render() {
-    const { header, vertical } = this.props
+    const { header } = this.props
     const { year, minYear, maxYear, posts } = this.state
 
     return (
@@ -69,7 +68,6 @@ export default class PostsGraph extends Component<PostsGraphProps, PostsGraphSta
           />
         )}
         <Graph
-          vertical={vertical}
           year={year}
           posts={posts}
           onFocus={(key) => this.setState({focusKey: key})}
