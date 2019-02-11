@@ -21,7 +21,6 @@ export default class App extends Component {
       <div className="app">
         <PostsGraph
           rss={rss}
-          vertical={false}
           header={true}
           changeFocus={(focusPosts: Items[]) => this.setState({posts: focusPosts})}
         />

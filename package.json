@@ -1,6 +1,6 @@
 {
   "name": "@nao5151/posts-graph",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "files": [
