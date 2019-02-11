@@ -24,43 +24,46 @@ const getCount = (post: any, key: string) => {
 }
 
 interface GraphProps {
-  vertical?: boolean,
   year: number,
   posts: Posts,
   onFocus: (key: string) => void
 }
 
 const Graph: React.SFC<GraphProps> = (props) => {
-  const { vertical, posts, year, onFocus } = props
+  const { posts, year, onFocus } = props
   if (Object.keys(posts).length === 0) return null
 
+  const size = 45;
+  const fontSize = 14;
+  const lineHeight = 1.5;
+
   return (
-    <div className={`graph ${vertical ? 'graph--vertical' : ''}`}>
-      <div className="graph__months">
-        {months.map(m => (
-          <div key={m} className="graph__month">{m}</div>
+    <svg viewBox={`${-fontSize} ${-fontSize * lineHeight} ${size * 12 + fontSize} ${size * 5 + fontSize * lineHeight}`}>
+      <g className='posts-graph__months' fontSize={fontSize} transform={`translate(${size / 2} 0)`} textAnchor="middle">
+        {months.map((m, i) => (
+          <text x={size * i} y={-fontSize / 2}>{m}</text>
         ))}
-      </div>
-      <div className="graph__weeks">
-        {weeks.map(w => (
-          <div key={w} className="graph__week">{w}</div>
+      </g>
+      <g className='posts-graph__weeks' fontSize={fontSize} transform={`translate(0 ${size / 2 + fontSize / 2})`} textAnchor="middle">
+        {weeks.map((w, i) => (
+          <text x={-fontSize / 2} y={size * i}>{w}</text>
         ))}
-      </div>
-      <div className="graph__posts">
+      </g>
+      <g className="posts-graph__posts">
         {months.map((_, m) => (
           <React.Fragment key={m}>
             {(() => {
-              const props = {
-                year,
+              const commonProps = {
                 month: m,
+                size,
               }
               const keys = createKeys(year, m)
               return [
-                <GraphBlock key={keys[0]} {...props} week={0} count={getCount(posts, keys[0])} onFocus={() => {onFocus(keys[0])}} />,
-                <GraphBlock key={keys[1]} {...props} week={1} count={getCount(posts, keys[1])} onFocus={() => {onFocus(keys[1])}} />,
-                <GraphBlock key={keys[2]} {...props} week={2} count={getCount(posts, keys[2])} onFocus={() => {onFocus(keys[2])}} />,
-                <GraphBlock key={keys[3]} {...props} week={3} count={getCount(posts, keys[3])} onFocus={() => {onFocus(keys[3])}} />,
-                <GraphBlock key={keys[4]} {...props} week={4}
+                <GraphBlock key={keys[0]} {...commonProps} week={0} count={getCount(posts, keys[0])} onFocus={() => {onFocus(keys[0])}} />,
+                <GraphBlock key={keys[1]} {...commonProps} week={1} count={getCount(posts, keys[1])} onFocus={() => {onFocus(keys[1])}} />,
+                <GraphBlock key={keys[2]} {...commonProps} week={2} count={getCount(posts, keys[2])} onFocus={() => {onFocus(keys[2])}} />,
+                <GraphBlock key={keys[3]} {...commonProps} week={3} count={getCount(posts, keys[3])} onFocus={() => {onFocus(keys[3])}} />,
+                <GraphBlock key={keys[4]} {...commonProps} week={4}
                   count={getWeeksInMonth(year, m) === 5 ? getCount(posts, keys[4]) : false}
                   onFocus={() => {onFocus(keys[4])}}
                 />
@@ -68,8 +71,8 @@ const Graph: React.SFC<GraphProps> = (props) => {
             })()}
           </React.Fragment>
         ))}
-      </div>
-    </div>
+      </g>
+    </svg>
   );
 }
 
