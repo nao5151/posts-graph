@@ -1,4 +1,4 @@
-import Parser, { Items, Output } from 'rss-parser'
+import Parser, { Item, Output } from 'rss-parser'
 import getDate from './getDate'
 
 const dateOption = {
@@ -22,10 +22,10 @@ export async function fetchFeed(rss: string): Promise<Output> {
 }
 
 export interface Posts {
-  [key: string]: Array<Items | number>
+  [key: string]: Array<Item | number>
 }
 
-export function itemsToPosts(acm: Posts, item: Items) {
+export function itemsToPosts(acm: Posts, item: Item) {
   const { year, month, week } = getDate(item.pubDate as string)
   const newItem = {
     ...item,

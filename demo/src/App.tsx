@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import PostsGraph from '../../src/index';
-import { Items } from 'rss-parser';
+import { Item } from 'rss-parser';
 import './App.scss'
 
 const rss = require('./rss.xml')
 
 interface AppState {
-  posts: Items[]
+  posts: Item[]
 }
 
 export default class App extends Component {
@@ -22,12 +22,14 @@ export default class App extends Component {
         <PostsGraph
           rss={rss}
           header={true}
-          changeFocus={(focusPosts: Items[]) => this.setState({posts: focusPosts})}
+          prev={<span>前</span>}
+          next={<span>次</span>}
+          changeFocus={(focusPosts: Item[]) => this.setState({posts: focusPosts})}
         />
         {posts.length > 0 && (
           <ul className="focus-posts">
             <li className="focus-posts__label">{`${posts[0].year}年${posts[0].month + 1}月${posts[0].week + 1}週 ${posts.length}記事`}</li>
-            {posts.map((post: Items) => (
+            {posts.map((post: Item) => (
               <li
                 key={post.guid}
                 className="focus-posts__item"
