@@ -7,7 +7,7 @@
     "lib",
     "src"
   ],
-  "homepage": "https://naoyukimiyazaki.github.io/posts-graph/",
+  "homepage": "https://nao5151.github.io/posts-graph/",
   "license": "MIT",
   "scripts": {
     "start": "npm run clean:demo && parcel demo/src/index.html -d demo/dist --open",
