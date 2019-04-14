@@ -15,7 +15,8 @@ const GraphBlock: React.SFC<GraphBlockProps> = ({month, week, count, size, onFoc
   return <rect
     tabIndex={count > 0 ? 0 : -1}
     className={`graph-block graph-block--${variant}`}
-    onFocus={onFocus} x={x} y={y} rx={10} width={size} height={size} />
+    onClick={onFocus} onFocus={onFocus}
+    x={x} y={y} rx={10} width={size} height={size} />
 }
 
 export default GraphBlock

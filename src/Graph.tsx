@@ -41,12 +41,12 @@ const Graph: React.SFC<GraphProps> = (props) => {
     <svg viewBox={`${-fontSize} ${-fontSize * lineHeight} ${size * 12 + fontSize} ${size * 5 + fontSize * lineHeight}`}>
       <g className='posts-graph__months' fontSize={fontSize} transform={`translate(${size / 2} 0)`} textAnchor="middle">
         {months.map((m, i) => (
-          <text x={size * i} y={-fontSize / 2}>{m}</text>
+          <text key={m} x={size * i} y={-fontSize / 2}>{m}</text>
         ))}
       </g>
       <g className='posts-graph__weeks' fontSize={fontSize} transform={`translate(0 ${size / 2 + fontSize / 2})`} textAnchor="middle">
         {weeks.map((w, i) => (
-          <text x={-fontSize / 2} y={size * i}>{w}</text>
+          <text key={w} x={-fontSize / 2} y={size * i}>{w}</text>
         ))}
       </g>
       <g className="posts-graph__posts">
